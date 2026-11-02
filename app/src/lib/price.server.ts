@@ -9,7 +9,7 @@ import { sign } from "viem/accounts";
 const FEED = "DOGE"; // prd.md §9.1 FEED_ID
 const DECIMALS = 8;
 const THRESHOLD = 3;
-const TIMEOUT_MS = 4_000;
+const TIMEOUT_MS = 8_000; // first calls after a cold start can take several seconds; prices stay valid for 60 s
 // Connector 1.0.0 payload tail, after the packages: packages count (2) | metadata size (3) = 0 | marker (9).
 const NO_METADATA = "0x000000";
 const MARKER = "0x000002ed57011e0000";
