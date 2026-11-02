@@ -10,6 +10,7 @@ Append-only. Each entry cites the PRD section it touches (prd.md §n). Newest at
 **Decision:** The frontend in `app/` (all six §11 surfaces, design spec in `docs/FRONTEND.md`) was written in a Claude Code session at the owner's request, not generated through Noah prompts.
 **Why:** The owner asked for it directly, ahead of the Noah build.
 **Consequence:** SOOTH-C6 ("built with Noah AI") cannot cover `app/` as it stands. Either the app is regenerated or ported through Noah with prompts logged in `noah/PROMPTS.md`, or the submission states this hand edit plainly. Owner to decide.
+**Resolved (owner, 2026-11-02):** SOOTH-C6 is dropped. The app and contracts were built in Claude Code, not ported through Noah, and the Verify page and `evidence/claims.json` no longer list a Noah claim. G0-4 is not pursued.
 
 ## D-002 · 2026-10-31 · `@redstone-finance/evm-connector@1.0.0` cannot be installed from npm
 

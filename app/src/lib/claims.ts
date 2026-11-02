@@ -43,13 +43,6 @@ export const CLAIMS: Claim[] = [
     target: "tested-local",
     limitation: "Testnet backstop venue and test payout token; no market liquidity or slippage",
   },
-  {
-    id: "SOOTH-C6",
-    claim: "The app and contracts were built with Noah AI",
-    tier: "unavailable",
-    target: "executed",
-    limitation: "Not built in Noah yet (DECISIONS.md D-001)",
-  },
 ];
 
 export const NOT_CLAIMED = [

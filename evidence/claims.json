@@ -70,15 +70,6 @@
         "T-P1"
       ],
       "limitations": "Testnet backstop venue and test payout token; no market liquidity or slippage"
-    },
-    {
-      "id": "SOOTH-C6",
-      "claim": "The app and contracts were built with Noah AI",
-      "tier": "unavailable",
-      "target": "executed",
-      "evidence": [],
-      "blocker": "App and contracts were written outside Noah (DECISIONS.md D-001); G0-4 not yet tried",
-      "limitations": "Hand edits listed in DECISIONS.md"
     }
   ],
   "notClaimed": [
