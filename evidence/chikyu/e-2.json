@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-11-02T10:35:25.360Z",
+  "sooth": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+  "venue": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+  "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "id": "E-2",
+  "check": "Demo holder approves the exact amount and arms a stop",
+  "result": "PASS",
+  "txs": {
+    "approve": "0xdcc6731e64408b4726ec039bdb0e10b16164142f5d2a0211c968751b9ae44e68",
+    "arm": "0x5dd46a87191e7d7d01ed61977e25d23293241ea61387a10486bb1e9d48c30c9d"
+  },
+  "allowance": "30000000000000000000",
+  "stop": {
+    "amount": "30000000000000000000",
+    "gasFloor": "2000000000000000000",
+    "stopPrice": "7000000",
+    "armedAt": "1793615720",
+    "expiry": "0",
+    "active": true
+  }
+}

@@ -1,0 +1,282 @@
+.try {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.tryText p {
+  color: var(--text-2);
+  max-width: 56ch;
+  margin-top: -4px;
+}
+
+.tryText .mono {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.tryFigures {
+  margin-top: 24px;
+  display: flex;
+  gap: 48px;
+}
+
+.tryFigures > div {
+  display: grid;
+  gap: 4px;
+  justify-items: start;
+}
+
+.mid {
+  font-family: var(--font);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.tryAction {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.tryAction > button {
+  width: 100%;
+}
+
+.result {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--r-card);
+  background: var(--raised);
+  border: 1px solid var(--line-strong);
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  animation: in var(--menu) var(--ease) both;
+}
+
+.result[data-tone="revert"] {
+  background: rgba(229, 72, 77, 0.08);
+  border-color: rgba(229, 72, 77, 0.24);
+}
+
+.result p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.section {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.title {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.table {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.table > li {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.txRow {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 1.4fr) auto;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.contractRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 52px;
+}
+
+.id {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.name {
+  color: var(--text);
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.desc {
+  color: var(--text-2);
+}
+
+.end {
+  justify-self: end;
+  text-align: right;
+}
+
+.muted {
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.params {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.param {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.paramKey {
+  color: var(--text-2);
+}
+
+.paramValue {
+  color: var(--text);
+  text-align: right;
+}
+
+.after {
+  grid-column: 2;
+  margin-top: -16px;
+}
+
+.claimRow {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 248px;
+  gap: 16px;
+  align-items: start;
+}
+
+.claimRow .id {
+  line-height: 20px;
+}
+
+.claimBody {
+  display: grid;
+  gap: 4px;
+}
+
+.claimText {
+  color: var(--text);
+  max-width: 62ch;
+}
+
+.limit {
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.tier {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+  text-align: right;
+}
+
+.tier .mono {
+  font-size: 12px;
+}
+
+.target {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.notClaimed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.notClaimed li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+}
+
+@media (max-width: 960px) {
+  .try {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .after {
+    grid-column: 1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .tryFigures {
+    gap: 32px;
+  }
+  .txRow {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 4px 12px;
+  }
+  .txRow .desc,
+  .txRow .end {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+  }
+  .params {
+    grid-template-columns: 1fr;
+  }
+  .claimRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .tier {
+    justify-items: start;
+    text-align: left;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 12px;
+    align-items: baseline;
+  }
+}

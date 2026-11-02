@@ -1,0 +1,53 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+a.link {
+  border-bottom: 1px solid var(--line-strong);
+  transition: border-color var(--fast) var(--ease);
+}
+
+a.link:hover {
+  border-color: var(--text);
+}
+
+a.link svg {
+  color: var(--text-3);
+}
+
+.sample {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.address {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.copy {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease);
+}
+
+.copy:hover {
+  color: var(--text);
+  background: var(--raised);
+}

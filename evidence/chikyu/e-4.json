@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-11-02T10:36:39.827Z",
+  "sooth": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+  "venue": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+  "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "id": "E-4",
+  "check": "trigger with the signed price at or below the stop -> success tx with a Triggered event",
+  "result": "PASS",
+  "stopPrice": "100000000",
+  "txs": {
+    "trigger": "0x11c8e2216409965712a0611213a4701ba3afb630d8b27b03962e94ce9f76f2fb"
+  },
+  "gasUsed": "125626",
+  "triggered": {
+    "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+    "caller": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+    "price": "7530400",
+    "priceTimestamp": "1793615792095",
+    "amount": "5000000000000000000",
+    "proceeds": "376520000000000000",
+    "fee": "1882600000000000"
+  },
+  "signedPrice": {
+    "value": 0.075304,
+    "timestamp": 1793615792095,
+    "signers": 3,
+    "sources": [
+      {
+        "name": "Bitstamp",
+        "price": 0.075284,
+        "signed": true
+      },
+      {
+        "name": "Gemini",
+        "price": 0.07518,
+        "signed": false
+      },
+      {
+        "name": "Bitfinex",
+        "price": 0.075408,
+        "signed": false
+      },
+      {
+        "name": "Gate.io",
+        "price": 0.07533,
+        "signed": true
+      },
+      {
+        "name": "CoinGecko",
+        "price": 0.075304,
+        "signed": true
+      }
+    ]
+  }
+}

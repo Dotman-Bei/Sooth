@@ -1,0 +1,32 @@
+.readout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  font-size: 14px;
+}
+
+.pair {
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.value {
+  color: var(--text);
+  min-width: 7ch;
+}
+
+.ring {
+  flex-shrink: 0;
+}
+
+.sweep {
+  stroke-dashoffset: 0;
+  animation: sweep 10s linear forwards;
+}
+
+@keyframes sweep {
+  to {
+    stroke-dashoffset: var(--c);
+  }
+}

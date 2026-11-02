@@ -1,0 +1,25 @@
+{
+  "network": "DogeOS Chikyū testnet",
+  "chainId": 6281971,
+  "deployedAt": "2026-11-01T13:22:39.265Z",
+  "deployer": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "priceDecimals": 8,
+  "contracts": {
+    "TestDollar": {
+      "address": "0x421ab5eaf17e7a4449cd87172755530570c50dff",
+      "tx": "0xc4b9dff68b51f103ef3a830539b12e79eda2dad6f6bf62f0f6f6cce737d437fc",
+      "block": "9094771"
+    },
+    "BackstopVenue": {
+      "address": "0x0bf7e8c2460af483aa9c76fa778cf52d28c83aea",
+      "tx": "0x8bd8bbb064af858923f3008bbcbb21bd614ac3b7caa7a4b80261350bf55f94ba",
+      "block": "9094773"
+    },
+    "Sooth": {
+      "address": "0x858c8f47c75e10576a75854274ec679a1d86c0a4",
+      "tx": "0x6d6175241793cc4b9ac872fdd44d0a6ce859858126199a171be489da3a189a9b",
+      "block": "9094775"
+    }
+  },
+  "bindTx": "0xb2c5f73cf65c23d0f8f5c35a43f10065f78e8cac456b98c2c69f60df13b376f2"
+}

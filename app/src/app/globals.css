@@ -1,0 +1,209 @@
+/* Tokens: docs/FRONTEND.md §2.
+   Page tokens (the printed annual, oxblood and grey) and app tokens (achromatic ledger) share one face. */
+:root {
+  /* page */
+  --bg: #e2e2e2;
+  --surface: #d6d6d6;
+  --ink: #7d0c14;
+  --muted: #7a4a4e;
+  --accent: #7d0c14;
+  --accent-ink: #e2e2e2;
+  --field-1: #7d0c14;
+  --field-1-ink: #e2e2e2;
+  --field-2: #6a0a11;
+  --field-3: #8f1a22;
+
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+
+  --margin: 32px;
+  --axis: 42%;
+
+  /* app */
+  --ground: #efeeee;
+  --a-surface: #ffffff;
+  --raised: #f6f5f5;
+  --active: #e6e4e4;
+  --border: #e6e3e3;
+  --rule: #f0eeee;
+  --control: #cfcaca;
+  --text: #1c1213;
+  --a-muted: #5f5657;
+  --faint: #6b6263;
+  --primary: #1c1213;
+  --primary-ink: #ffffff;
+  --data: #7d0c14;
+  --positive: #247b50;
+  --negative: #b4232a;
+  --pill-positive-bg: #dcfae5;
+  --pill-positive-ink: #04250e;
+  --pill-negative-bg: #ffedea;
+  --pill-negative-ink: #831c1e;
+  --pill-warning-bg: #fffbeb;
+  --pill-warning-ink: #92400e;
+  --pill-neutral-bg: #eeeeee;
+  --pill-neutral-ink: #3d3536;
+  --radius-card: 8px;
+  --radius-control: 6px;
+
+  --font: var(--font-hanken), system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-press: 120ms;
+  --t-hover: 150ms;
+  --t-ui: 200ms;
+
+  color-scheme: light;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --margin: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --margin: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+/* The DogeOS SDK stylesheet (live mode) sets colour on :root and [data-theme]; these outrank it. */
+html:root {
+  background: var(--bg);
+}
+
+html body,
+html body[data-theme] {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--step-body);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* The SDK wraps children in <div class="light" data-theme>; this root re-applies our ground. */
+.app-root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Entrances (page only): parts of a section rise once as it enters. Content stays visible without script. */
+.js [data-rise] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms var(--ease),
+    transform 700ms var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+.js [data-rise].in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js [data-rise] {
+    opacity: 1;
+    transform: none;
+  }
+}

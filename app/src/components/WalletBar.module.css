@@ -1,0 +1,79 @@
+.wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.bar {
+  display: flex;
+  gap: 2px;
+  height: 12px;
+}
+
+.bar > span {
+  display: block;
+  min-width: 6px;
+  border-radius: 3px;
+  transition: width 300ms var(--ease);
+}
+
+.amount {
+  background: #e9caca;
+}
+
+.rest {
+  background: var(--raised);
+}
+
+.floor {
+  background: var(--text);
+}
+
+.key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-2);
+}
+
+.key b {
+  font-weight: 400;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.key i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: 0;
+}
+
+.keyFloor {
+  margin-left: auto;
+}
+
+.swAmount {
+  background: #e9caca;
+}
+
+.swRest {
+  background: var(--raised);
+}
+
+.swFloor {
+  background: var(--text);
+}
+
+@media (max-width: 520px) {
+  .key {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .keyFloor {
+    margin-left: 0;
+  }
+}

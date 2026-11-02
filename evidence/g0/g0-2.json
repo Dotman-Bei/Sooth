@@ -1,0 +1,26 @@
+{
+  "ranAt": "2026-11-01T12:20:08.674Z",
+  "check": "G0-2: a contract can transferFrom native DOGE from an approving EOA",
+  "result": "PASS",
+  "account": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "probe": "0xbe86343e5c69f305b61680e142ada94fb4394068",
+  "txs": {
+    "deploy": "0xc9a21cada2ac8c07052112b71a427567dff50f739df3635fa1e14b31bd4a259d",
+    "approve": "0xcdfee20707829f40a6a940886d4a09fd3c966b0154481f065c36404967df0ca2",
+    "pull": "0x1357e324a8841a247b6e354b15015b354fb20f6edf8eebd675c95c574c9af939",
+    "giveBack": "0xe3d46e79bab9d37cf3c0f6bf4f7fa2a4bd45b0ad34d379cee1b9fb28208d0019"
+  },
+  "allowanceAfterApprove": "1000000000000000000",
+  "pulledEvent": {
+    "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+    "amount": "1000000000000000000",
+    "holderBefore": "42014783825099857230",
+    "holderAfter": "41014783825099857230",
+    "probeAfter": "1000000000000000000"
+  },
+  "probeBalanceAfterPull": {
+    "native": "1000000000000000000",
+    "balanceOf": "1000000000000000000",
+    "doubleCountSafe": true
+  }
+}

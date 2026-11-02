@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-11-02T10:38:24.424Z",
+  "id": "E-1",
+  "check": "Deploy txs and verified source for Sooth, venue and payout token (v2, own price signers, DECISIONS.md D-018)",
+  "result": "PASS",
+  "compiler": "solc 0.8.24, evm cancun, optimizer 200",
+  "verifier": "Blockscout",
+  "bindTx": "0xc440d7f794345df35cd2b6aa746cf0610d08dd1499b2669558c41534c7b7ef35",
+  "priceSigners": [
+    "0x7Ea549d78bBA1335B9e4f801d1DFbe1208D950b1",
+    "0xCF284d829B6618A848DebBAb0137811064267bFd",
+    "0xE02C5C145B71b49887f4d99B50588805A56c1e8F",
+    "0x8e54B789b3C0154cbB1aD7718509454B3B372534",
+    "0x44a917FbcFE2CACA240C14D11497A05da400ad53"
+  ],
+  "contracts": {
+    "TestDollar": {
+      "address": "0xc6a3d2bb2fb295e608b13463218f45b3be7c4361",
+      "deployTx": "0x45609c8fbd0a4d2b7d39c44c035573f831e94a55f90ac846a7fdcbde4805bfca",
+      "block": "9120109",
+      "sourceVerified": true,
+      "url": "https://blockscout.testnet.dogeos.com/address/0xc6a3d2bb2fb295e608b13463218f45b3be7c4361?tab=contract"
+    },
+    "BackstopVenue": {
+      "address": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+      "deployTx": "0x04762babbf80b297f2bc1a8c25861aaad9b437e24070a92a8d2b1b9785f20031",
+      "block": "9120112",
+      "sourceVerified": true,
+      "url": "https://blockscout.testnet.dogeos.com/address/0x8ddb477f9415c360b6c6980d3592376f3563c2fa?tab=contract"
+    },
+    "Sooth": {
+      "address": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+      "deployTx": "0x6b353ae07498283aa517d709d2f0326899b7304fa8afd1e20dd7d0e9fc38b889",
+      "block": "9120114",
+      "sourceVerified": true,
+      "url": "https://blockscout.testnet.dogeos.com/address/0x3ec80687bf8ad5cd1edf4899c1be614a34179db5?tab=contract"
+    }
+  },
+  "note": "TestDollar's bytecode matched an already-verified contract, so Blockscout reused that verification. v1 (RedStone primary-prod) is in v1-redstone/."
+}

@@ -1,0 +1,157 @@
+/* App screens: achromatic ledger (docs/FRONTEND.md §2, .taste-skill/app/direction.json).
+   The chrome is ink on a grey ground with white panels; the one red goes only on the stop line and stop figures.
+   Older token names used by the screen modules are mapped onto the new values here. */
+
+.appShell {
+  /* the style's roles */
+  --surface: var(--a-surface);
+  --muted: var(--a-muted);
+  --accent: var(--data);
+  --ink: var(--text);
+  --bg: var(--ground);
+
+  /* names kept from v1 modules, mapped */
+  --text-2: var(--a-muted);
+  --text-3: var(--faint);
+  --line: var(--border);
+  --line-strong: var(--control);
+  --accent-dim: #f6e9ea;
+  --bg-deep: var(--raised);
+  --r-tag: 4px;
+  --r-control: var(--radius-control);
+  --r-card: var(--radius-card);
+  --r-panel: var(--radius-card);
+  --fast: var(--t-hover);
+  --menu: var(--t-ui);
+  --enter: 0ms;
+  --gutter: 32px;
+  --max: 1100px;
+  --header: 56px;
+  --paper: #fbfaf8;
+  --paper-ink: var(--text);
+
+  min-height: 100svh;
+  background: var(--ground);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 760px) {
+  .appShell {
+    --gutter: 16px;
+  }
+}
+
+.appShell ::selection {
+  background: #ead9da;
+  color: var(--text);
+}
+
+.appShell :focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Figures: tabular in the text face. No monospace on app screens either. */
+.appShell .mono {
+  font-family: var(--font);
+  font-variant-numeric: tabular-nums;
+}
+
+.appShell .container {
+  width: 100%;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Buttons: near-black primary, grey secondary (the style's move). Radius 6. */
+.appShell .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--t-hover) var(--ease),
+    border-color var(--t-hover) var(--ease),
+    color var(--t-hover) var(--ease),
+    transform var(--t-press) var(--ease);
+}
+
+.appShell .btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.appShell .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.appShell .btn-primary {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.appShell .btn-primary:hover:not(:disabled) {
+  background: #3a2c2d;
+}
+
+/* Connect wallet: the landing's button (square, the one red), matching the top bar. */
+.appShell .btn-connect {
+  border-radius: 0;
+  background: var(--data);
+  color: var(--accent-ink);
+}
+
+.appShell .btn-connect:hover:not(:disabled) {
+  background: #640a10;
+}
+
+.appShell .btn-secondary {
+  background: #e7e5e5;
+  color: var(--text);
+}
+
+.appShell .btn-secondary:hover:not(:disabled) {
+  background: #dddada;
+}
+
+.appShell .btn-ghost {
+  background: transparent;
+  color: var(--a-muted);
+  padding: 0 12px;
+}
+
+.appShell .btn-ghost:hover:not(:disabled) {
+  color: var(--text);
+  background: var(--active);
+}
+
+.appShell .btn-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .appShell .btn {
+    height: 44px;
+  }
+}
+
+/* No entrances on app screens (house rule): .enter is inert here. */
+.appShell .enter > * {
+  animation: none;
+}

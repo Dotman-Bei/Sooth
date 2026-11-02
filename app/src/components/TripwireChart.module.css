@@ -1,0 +1,73 @@
+.wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.well {
+  width: 100%;
+  position: relative;
+}
+
+.well svg {
+  display: block;
+  overflow: visible;
+}
+
+.axis {
+  font-family: var(--font);
+  font-size: 12px;
+  fill: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.stopTag {
+  font-family: var(--font);
+  font-size: 12px;
+  fill: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.priceTag {
+  font-family: var(--font);
+  font-size: 12px;
+  fill: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  font-family: var(--font);
+  font-size: 12px;
+  fill: var(--text-2);
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-2);
+}
+
+.legend li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1px;
+  margin-right: 8px;
+  vertical-align: middle;
+  background: var(--text-3);
+}
+
+.empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  color: var(--text-3);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-card);
+}

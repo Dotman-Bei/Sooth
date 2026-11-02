@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-11-02T10:35:37.355Z",
+  "sooth": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+  "venue": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+  "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "id": "E-7",
+  "check": "cancel, then trigger -> reverts NoActiveStop (I-5)",
+  "result": "PASS",
+  "txs": {
+    "cancel": "0xa59aff53da0f4999a3c831d4bfbb1c293eacb673062c36f06325512c7cf9cc1a",
+    "trigger": "0xc61ad679597c51578b136c804d9b03c6fca2cde44096d8048cef28e775175879"
+  },
+  "triggerStatus": "reverted",
+  "decodedRevert": "NoActiveStop",
+  "holderDogeUnchangedByTrigger": true
+}

@@ -1,0 +1,23 @@
+# Secrets (prd.md §0.8): PRIVATE_KEY and REDSTONE_API_KEY live here, never in the repo
+.env
+.env.*
+!.env.example
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+node_modules/
+
+# Local tooling and build output
+.claude/
+.next/
+*.tsbuildinfo
+
+# Design inspector runs (screenshots, reports); keep the chosen directions
+.taste-skill/*
+!.taste-skill/direction.json
+!.taste-skill/app/
+.taste-skill/app/*
+!.taste-skill/app/direction.json

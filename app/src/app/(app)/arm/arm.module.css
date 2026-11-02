@@ -1,0 +1,142 @@
+/* Arm: settings in two columns (app sheet §5 settings). A label column beside a panel per decision,
+   rows split by a full-width rule. */
+
+.price {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--a-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.price b {
+  font-weight: 500;
+  color: var(--text);
+  margin-left: 4px;
+}
+
+.finding {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 72ch;
+}
+
+.finding b {
+  font-weight: 500;
+}
+
+.stopFig {
+  color: var(--data);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 640px);
+  gap: 32px 48px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.rowLabel {
+  padding-top: 8px;
+}
+
+.rowTitle {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.rowHelp {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--a-muted);
+  max-width: 40ch;
+}
+
+.rowPanel {
+  background: var(--raised);
+  border-radius: var(--radius-card);
+  padding: 16px;
+}
+
+.rowPanel > :global(*) + :global(*) {
+  margin-top: 16px;
+}
+
+.bar {
+  background: var(--a-surface);
+  border-radius: var(--radius-control);
+  padding: 12px;
+}
+
+.steps {
+  display: grid;
+  gap: 8px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.step button {
+  width: 100%;
+}
+
+.stepWord {
+  font-size: 13px;
+  color: var(--a-muted);
+}
+
+.stepDone {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--positive);
+}
+
+.stepDone > :last-child {
+  margin-left: auto;
+}
+
+.mobileActions {
+  display: none;
+}
+
+.mobileActions > button {
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .rowLabel {
+    padding-top: 0;
+  }
+  .desktopActions {
+    display: none;
+  }
+  .mobileActions {
+    display: block;
+    position: sticky;
+    bottom: 64px;
+    margin: 16px calc(var(--gutter) * -1) -40px;
+    padding: 12px var(--gutter);
+    background: var(--a-surface);
+    border-top: 1px solid var(--border);
+    z-index: 10;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 960px) {
+  .mobileActions {
+    bottom: 0;
+  }
+}

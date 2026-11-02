@@ -1,0 +1,14 @@
+[profile.default]
+src = "src"
+test = "test"
+out = "out"
+libs = ["lib"]
+# prd.md §9: ^0.8.24, EVM target osaka or cancun. Cancun opcodes confirmed on Chikyū (evidence/g0/read-probes.json).
+solc_version = "0.8.24"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 200
+remappings = ["@redstone-finance/evm-connector/=lib/redstone-evm-connector-1.0.0/"]
+
+[rpc_endpoints]
+chikyu = "https://rpc.testnet.dogeos.com"

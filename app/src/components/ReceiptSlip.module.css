@@ -1,0 +1,98 @@
+/* The slip: flat paper one tone above the ground, torn edges by mask. No tilt, no resting shadow. */
+.wrap {
+  width: 100%;
+  max-width: 400px;
+}
+
+.slip {
+  --bite: 5px;
+  background: #ffffff;
+  color: var(--paper-ink);
+  padding: 32px 28px 28px;
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 16px;
+  font-variant-numeric: tabular-nums;
+  /* taste-skill-ignore: radial masks cut the torn paper edges; nothing is coloured by them */
+  -webkit-mask:
+    radial-gradient(circle at 6px 0, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) top / 12px 51% repeat-x, /* taste-skill-ignore */
+    radial-gradient(circle at 6px 100%, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) bottom / 12px 51% /* taste-skill-ignore */
+      repeat-x;
+  /* taste-skill-ignore: the same torn-edge mask */
+  mask:
+    radial-gradient(circle at 6px 0, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) top / 12px 51% repeat-x, /* taste-skill-ignore */
+    radial-gradient(circle at 6px 100%, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) bottom / 12px 51% /* taste-skill-ignore */
+      repeat-x;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--data);
+}
+
+.brand span {
+  color: var(--paper-ink);
+}
+
+.meta {
+  margin-top: 8px;
+  color: #6b6458;
+}
+
+.group {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.row span:first-child {
+  color: #6b6458;
+}
+
+.row span:last-child {
+  text-align: right;
+}
+
+.row[data-strong="true"] {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.row[data-strong="true"] span:first-child {
+  color: var(--paper-ink);
+}
+
+.foot {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  color: #6b6458;
+  font-family: var(--font);
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    transform: none;
+    max-width: none;
+  }
+  .slip {
+    padding: 28px 20px 24px;
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "ranAt": "2026-10-31T20:30:52.837Z",
+  "source": {
+    "chainList": "https://web3-assets.mydoge.com/api/chains",
+    "entry": {
+      "chainId": "eip155:6281971",
+      "name": "DOGEOS_TESTNET",
+      "icon": "/assets/chains/eip155/6281971/icon.svg",
+      "nativeCurrency": {
+        "name": "DOGE",
+        "symbol": "DOGE",
+        "decimals": 18
+      },
+      "rpcUrls": {
+        "default": {
+          "http": [
+            "https://rpc.testnet.dogeos.com"
+          ]
+        }
+      },
+      "blockExplorers": {
+        "default": {
+          "name": "DOGEOS_TESTNET Explorer",
+          "url": "https://blockscout.testnet.dogeos.com/"
+        }
+      }
+    },
+    "sampleHolder": "0xd0edb048f7d9423d5a5a174dc7746e55c45235ea"
+  },
+  "results": {
+    "chainId": {
+      "ok": true,
+      "value": 6281971
+    },
+    "latestBlock": {
+      "ok": true,
+      "value": {
+        "number": "9074552",
+        "timestamp": "1793478656",
+        "txs": 11
+      }
+    },
+    "nativeDoge.code": {
+      "ok": true,
+      "value": {
+        "bytes": 1679
+      }
+    },
+    "nativeDoge.name": {
+      "ok": true,
+      "value": "Dogecoin"
+    },
+    "nativeDoge.symbol": {
+      "ok": true,
+      "value": "DOGE"
+    },
+    "nativeDoge.decimals": {
+      "ok": true,
+      "value": 18
+    },
+    "nativeDoge.totalSupply": {
+      "ok": true,
+      "value": "226156424291633194186662080095093570025917938800079226639565593765455331328"
+    },
+    "nativeDoge.balanceOf_equals_getBalance": {
+      "ok": true,
+      "value": {
+        "holder": "0xd0edb048f7d9423d5a5a174dc7746e55c45235ea",
+        "balanceOf": "25602863873762592474526",
+        "getBalance": "25602863873762592474526",
+        "equal": true
+      }
+    },
+    "nativeDoge.allowance_callable": {
+      "ok": true,
+      "value": "0"
+    },
+    "G0-8.revokeFee": {
+      "ok": true,
+      "value": {
+        "gas": "26326",
+        "gasPriceWei": "15680108",
+        "executionDoge": "0.000000412794523208",
+        "dataAndFinalityDoge": "0.005992216702780225",
+        "totalDoge": "0.005992629497303433",
+        "tenTimesDoge": "0.05992629497303433",
+        "minGasFloor1DogeCovers": "166 revokes"
+      }
+    },
+    "rpc.historicalState": {
+      "ok": true,
+      "value": {
+        "block": "9069552",
+        "balance": "25616787171007256024364"
+      }
+    },
+    "l1Oracle.code": {
+      "ok": true,
+      "value": {
+        "bytes": 3782
+      }
+    },
+    "rpc.getLogs.1000": {
+      "ok": true,
+      "value": {
+        "logs": 51
+      }
+    },
+    "rpc.getLogs.10000": {
+      "ok": true,
+      "value": {
+        "logs": 489
+      }
+    },
+    "rpc.getLogs.100000": {
+      "ok": false,
+      "error": "Invalid parameters were provided to the RPC method."
+    },
+    "evm.PUSH0 (shanghai)": {
+      "ok": true,
+      "value": "executes"
+    },
+    "evm.TLOAD/TSTORE (cancun)": {
+      "ok": true,
+      "value": "executes"
+    },
+    "evm.MCOPY (cancun)": {
+      "ok": true,
+      "value": "executes"
+    },
+    "G0-7.explorerApi": {
+      "ok": true,
+      "value": {
+        "url": "https://blockscout.testnet.dogeos.com/api/v2/stats",
+        "status": 200
+      }
+    }
+  }
+}

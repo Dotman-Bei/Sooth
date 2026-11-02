@@ -1,0 +1,168 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.priceCol {
+  display: grid;
+  gap: 20px;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.figure {
+  display: grid;
+  gap: 4px;
+  justify-items: start;
+}
+
+.big {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.none {
+  color: var(--text-3);
+}
+
+.checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.check {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.check:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  height: 20px;
+  color: var(--faint);
+}
+
+.check[data-ok="false"] .mark {
+  color: var(--negative);
+}
+
+.checkText {
+  color: var(--text-2);
+}
+
+.check[data-ok="false"] .checkText {
+  color: var(--text);
+}
+
+.checkValue {
+  font-size: 12px;
+  color: var(--text-3);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.check[data-ok="false"] .checkValue {
+  color: var(--text);
+}
+
+
+.go {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.revert {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: var(--r-card);
+  background: rgba(229, 72, 77, 0.08);
+  border: 1px solid rgba(229, 72, 77, 0.24);
+  display: grid;
+  gap: 8px;
+  animation: in var(--menu) var(--ease) both;
+}
+
+.revert p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .big {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .check {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 4px 12px;
+  }
+  .checkValue {
+    grid-column: 2;
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+.finding {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--negative);
+}
+
+.finding[data-ok="true"] {
+  color: var(--positive);
+}
+
+.noStop {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  min-height: 240px;
+  padding: 24px;
+  border-radius: var(--radius-control);
+  background: var(--raised);
+  color: var(--a-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.noStop p:first-child {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 24px;
+}

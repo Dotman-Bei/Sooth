@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-11-02T10:37:22.061Z",
+  "sooth": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+  "venue": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+  "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "id": "E-4 follow-up",
+  "check": "A second trigger after the E-4 sell -> reverted tx, decoded NoActiveStop (I-5, SOOTH-C4)",
+  "result": "PASS",
+  "txs": {
+    "trigger": "0xd7e08afd62b8fc8c269dda6ef76e7fd4b69dfaa9a014243bd2f5a4f9032863bf",
+    "after": "e-4.json"
+  },
+  "decodedRevert": {
+    "name": "NoActiveStop"
+  }
+}

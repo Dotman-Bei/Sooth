@@ -1,0 +1,52 @@
+{
+  "recordedAt": "2026-11-02T10:36:20.490Z",
+  "sooth": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+  "venue": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+  "holder": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "id": "E-3",
+  "check": "trigger with the signed price above the stop -> reverted tx, decoded PriceAboveStop",
+  "result": "PASS",
+  "stopPrice": "1000000",
+  "txs": {
+    "trigger": "0x5b05edeef145c301ac2962c1f385f60f8ed5867f288909664a99ab93274af918"
+  },
+  "decodedRevert": {
+    "name": "PriceAboveStop",
+    "args": [
+      "7530400",
+      "1000000"
+    ]
+  },
+  "signedPrice": {
+    "value": 0.075304,
+    "timestamp": 1793615773654,
+    "signers": 3,
+    "sources": [
+      {
+        "name": "Bitstamp",
+        "price": 0.075284,
+        "signed": true
+      },
+      {
+        "name": "Gemini",
+        "price": 0.07518,
+        "signed": false
+      },
+      {
+        "name": "Bitfinex",
+        "price": 0.075408,
+        "signed": false
+      },
+      {
+        "name": "Gate.io",
+        "price": 0.07534,
+        "signed": true
+      },
+      {
+        "name": "CoinGecko",
+        "price": 0.075304,
+        "signed": true
+      }
+    ]
+  }
+}

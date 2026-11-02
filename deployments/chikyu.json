@@ -1,0 +1,32 @@
+{
+  "network": "DogeOS Chikyū testnet",
+  "chainId": 6281971,
+  "deployedAt": "2026-11-02T10:29:42.625Z",
+  "deployer": "0x5e3cC65cA2f1a6AC3Bf75f7110E50d296F127fe6",
+  "priceDecimals": 8,
+  "priceSigners": [
+    "0x7Ea549d78bBA1335B9e4f801d1DFbe1208D950b1",
+    "0xCF284d829B6618A848DebBAb0137811064267bFd",
+    "0xE02C5C145B71b49887f4d99B50588805A56c1e8F",
+    "0x8e54B789b3C0154cbB1aD7718509454B3B372534",
+    "0x44a917FbcFE2CACA240C14D11497A05da400ad53"
+  ],
+  "contracts": {
+    "TestDollar": {
+      "address": "0xc6a3d2bb2fb295e608b13463218f45b3be7c4361",
+      "tx": "0x45609c8fbd0a4d2b7d39c44c035573f831e94a55f90ac846a7fdcbde4805bfca",
+      "block": "9120109"
+    },
+    "BackstopVenue": {
+      "address": "0x8ddb477f9415c360b6c6980d3592376f3563c2fa",
+      "tx": "0x04762babbf80b297f2bc1a8c25861aaad9b437e24070a92a8d2b1b9785f20031",
+      "block": "9120112"
+    },
+    "Sooth": {
+      "address": "0x3ec80687bf8ad5cd1edf4899c1be614a34179db5",
+      "tx": "0x6b353ae07498283aa517d709d2f0326899b7304fa8afd1e20dd7d0e9fc38b889",
+      "block": "9120114"
+    }
+  },
+  "bindTx": "0xc440d7f794345df35cd2b6aa746cf0610d08dd1499b2669558c41534c7b7ef35"
+}

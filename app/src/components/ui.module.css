@@ -1,0 +1,353 @@
+/* Shared app-screen primitives: achromatic ledger (docs/FRONTEND.md §2).
+   Title 24/500, cells 14, labels 12-13 grey, figures tabular, white panels with a 1px edge and 8px radius. */
+
+.page {
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+.head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  color: var(--a-muted);
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 72ch;
+}
+
+.panel {
+  background: var(--a-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 20px;
+}
+
+.well {
+  background: var(--a-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 20px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.caption {
+  color: var(--faint);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* Fields */
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background: var(--a-surface);
+  border: 1px solid var(--control);
+  border-radius: var(--radius-control);
+  padding: 0 4px 0 12px;
+  transition: border-color var(--t-hover) var(--ease);
+}
+
+.inputWrap:focus-within {
+  border-color: var(--text);
+}
+
+.inputWrap[data-invalid="true"] {
+  border-color: var(--negative);
+}
+
+.affix {
+  font-size: 13px;
+  color: var(--a-muted);
+}
+
+.affix:last-child {
+  padding-right: 8px;
+}
+
+.affix + .inline {
+  margin-left: 12px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  padding: 0 8px 0 4px;
+}
+
+.inline {
+  height: 28px;
+  padding: 0 12px;
+  margin-right: 4px;
+  border-radius: 4px;
+  border: 0;
+  background: #e7e5e5;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--t-hover) var(--ease);
+}
+
+.inline:hover {
+  background: #dddada;
+}
+
+.hint {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--a-muted);
+}
+
+.error {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--negative);
+}
+
+.warn {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--pill-warning-ink);
+}
+
+/* Segmented: a grey track with a white selected segment */
+.segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  background: #e9e7e7;
+  border-radius: var(--radius-control);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.segment {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--a-muted);
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color var(--t-hover) var(--ease),
+    background-color var(--t-hover) var(--ease);
+}
+
+.segment:hover {
+  color: var(--text);
+}
+
+.segment[aria-checked="true"] {
+  background: var(--a-surface);
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Figures: one card divided by 1px rules (group, don't box) */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--a-surface);
+}
+
+.stat {
+  display: grid;
+  gap: 4px;
+  padding: 16px 20px;
+  border-left: 1px solid var(--border);
+  align-content: start;
+}
+
+.stat:first-child {
+  border-left: 0;
+}
+
+.statLabel {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--a-muted);
+}
+
+.statValue {
+  font-variant-numeric: tabular-nums;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.statUnit {
+  font-size: 13px;
+  color: var(--a-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* Key-value rows */
+.rows {
+  display: grid;
+}
+
+.kv {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 14px;
+}
+
+.kv:first-child {
+  border-top: 0;
+}
+
+.kvLabel {
+  color: var(--a-muted);
+}
+
+.kvValue {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: var(--text);
+  text-align: right;
+}
+
+/* Status: a dot and a word */
+.state {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--pill-neutral-bg);
+  color: var(--pill-neutral-ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.state:has(.dot[data-tone="positive"]) {
+  background: var(--pill-positive-bg);
+  color: var(--pill-positive-ink);
+}
+
+.state:has(.dot[data-tone="negative"]) {
+  background: var(--pill-negative-bg);
+  color: var(--pill-negative-ink);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--control);
+  transition: text-decoration-color var(--t-hover) var(--ease);
+}
+
+.textLink:hover {
+  text-decoration-color: var(--text);
+}
+
+@media (max-width: 960px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stat {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .stat:nth-child(2n) {
+    border-left: 1px solid var(--border);
+  }
+  .stat:nth-child(-n + 2) {
+    border-top: 0;
+  }
+  .stat:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .panel,
+  .well {
+    padding: 16px;
+  }
+  .inputWrap {
+    height: 44px;
+  }
+  .segment {
+    height: 40px;
+  }
+}

@@ -1,0 +1,15 @@
+.line {
+  margin: 0;
+  padding: 12px var(--margin);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--step-small);
+  line-height: 1.4;
+}
+
+.app {
+  background: var(--raised);
+  color: var(--text);
+  font-size: 13px;
+  padding: 8px 16px;
+}

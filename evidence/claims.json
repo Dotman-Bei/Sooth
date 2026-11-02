@@ -1,0 +1,92 @@
+{
+  "updated": "2026-11-02",
+  "tiers": "executed-chikyu > executed > tested-local > designed; unavailable = blocked (prd.md Â§15)",
+  "deployment": "deployments/chikyu.json",
+  "claims": [
+    {
+      "id": "SOOTH-C1",
+      "claim": "trigger reverts when the DOGE/USD value in the call, the median of at least 3 of Sooth's 5 price signers and at most 60 s old, is above the holder's stop",
+      "tier": "executed-chikyu",
+      "target": "executed-chikyu",
+      "evidence": [
+        "E-3 (evidence/chikyu/e-3.json): reverted PriceAboveStop(7530400, 1000000) on Chikyū",
+        "T-N1",
+        "T-N3",
+        "T-N4",
+        "T-N5",
+        "T-N6",
+        "T-F1",
+        "mutation check: 18 of 18 mutants caught"
+      ],
+      "limitations": "The five signer keys and their exchange feeds are run by the Sooth operator, not an independent oracle (D-018). Caller may choose among valid packages within 60 s"
+    },
+    {
+      "id": "SOOTH-C2",
+      "claim": "After any successful trigger, the holder's native DOGE balance is at least their gas floor",
+      "tier": "executed-chikyu",
+      "target": "executed-chikyu",
+      "evidence": [
+        "E-5 (evidence/chikyu/e-5.json): holder kept 35.39 DOGE after selling 5, floor 2",
+        "T-N2",
+        "T-F1"
+      ],
+      "limitations": "Floor is set in DOGE, not in fee units; the holder can still spend it themselves"
+    },
+    {
+      "id": "SOOTH-C3",
+      "claim": "Before a trigger, Sooth and the venue hold none of the holder's DOGE",
+      "tier": "executed-chikyu",
+      "target": "executed-chikyu",
+      "evidence": [
+        "E-6 (evidence/chikyu/e-6.json)",
+        "E-5: Sooth held 0 DOGE before and after the sell",
+        "T-I1"
+      ],
+      "limitations": "An allowance is still authority; revoke after cancel"
+    },
+    {
+      "id": "SOOTH-C4",
+      "claim": "A stop fires at most once and never moves more than its armed amount",
+      "tier": "executed-chikyu",
+      "target": "tested-local, then executed-chikyu",
+      "evidence": [
+        "E-4 follow-up (evidence/chikyu/e-4-second-trigger.json): a second trigger after the sell reverted NoActiveStop",
+        "E-7 (evidence/chikyu/e-7.json)",
+        "E-5: venue DOGE grew by exactly the armed 5 DOGE",
+        "T-N7",
+        "T-N8",
+        "T-N9",
+        "T-F1"
+      ],
+      "limitations": "n/a"
+    },
+    {
+      "id": "SOOTH-C5",
+      "claim": "The payout uses the same signed price as the trigger",
+      "tier": "executed-chikyu",
+      "target": "tested-local",
+      "evidence": [
+        "E-4 (evidence/chikyu/e-4.json): Triggered price 7530400, proceeds 0.37652 tDOLLAR for 5 DOGE",
+        "T-P1"
+      ],
+      "limitations": "Testnet backstop venue and test payout token; no market liquidity or slippage"
+    },
+    {
+      "id": "SOOTH-C6",
+      "claim": "The app and contracts were built with Noah AI",
+      "tier": "unavailable",
+      "target": "executed",
+      "evidence": [],
+      "blocker": "App and contracts were written outside Noah (DECISIONS.md D-001); G0-4 not yet tried",
+      "limitations": "Hand edits listed in DECISIONS.md"
+    }
+  ],
+  "notClaimed": [
+    "That Sooth prevents losses",
+    "That a sell happens at exactly the stop price",
+    "Real liquidity",
+    "Mainnet readiness",
+    "That anyone will call trigger in time"
+  ],
+  "priceSource": "Sooth's own 5 price signers, 3 needed, each signing one exchange's DOGE/USD (DECISIONS.md D-018). Not an independent oracle."
+}
